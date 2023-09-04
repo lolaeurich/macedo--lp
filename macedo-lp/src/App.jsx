@@ -1,33 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import EquipeCarousel from "./components/EquipeCarousel.jsx";
+import Hero from "./components/Hero.jsx";
+import Sobre from "./components/Sobre.jsx";
+import Atuacao from "./components/Atuacao.jsx";
+import NavBar from "./components/NavBar.jsx";
+import Contato from "./components/Contato.jsx";
+import Footer from "./components/Footer.jsx"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <div className="h-full w-full font-Playfair">
+           <NavBar/>
+            <Hero/>
+            <Sobre/>
+            <div className={'bg-gradient-to-b from-black via-yellow-900 to-gray-950'}>
+            <Atuacao/>
+            <EquipeCarousel/>
+            </div>
+            <div className={'w-full bg-gradient-to-b from-gray-950 to-black h-[600px]'}>
+                <Contato/>
+            </div>
+            <div>
+               <Footer/>
+            </div>
+        </div>
     </>
   )
 }
